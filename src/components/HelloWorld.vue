@@ -41,7 +41,7 @@ export default {
         // Assuming the response contains a token and user information
         if (response.data) {
           alert('Login successful!');
-          console.log('User Data:', response.data);
+          this.userData = response.data
           // You can store the token in localStorage or Vuex if needed
           // localStorage.setItem('token', response.data.token);
         }
