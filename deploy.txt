@@ -1,0 +1,21 @@
+---
+LOCAL: 
+
+npm run build 
+
+ zip -r dist.zip dist     
+
+ upload file dist.zip to ec2 instance 
+
+ ----
+ EC2: 
+ sudo yum install httpd -y
+
+ sudo cp -r /path/to/vue-app/dist/* /var/www/html/
+
+sudo vi /etc/httpd/conf/httpd.conf  --> config port (ex: 8080)
+netstat -punta | grep LISTEN // check other app listen on port 8080, if existed kill it 
+
+sudo systemctl restart httpd
+
+
